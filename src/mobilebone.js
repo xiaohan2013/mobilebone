@@ -124,6 +124,7 @@
 			// the value of callback is a key name, and the host is root here. 
 			// eg. if the name of animationstart is 'doLoading', so the script will execute 'root.doLoading()'
 			// By default, the value of root is 'window'
+			//这里的this是Mobilebon
 			root: this.rootTransition,
 			// the form of transition, the value (eg. 'slide') will be a className to add or remove. 
 			// of course, u can set to other valeu, for example, 'fade' or 'flip'. However, u shou add corresponding CSS3 code.
