@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+#calendar{
+	width: 400px;
+	height: 400px;
+	outline: 1px solid red; 
+
+	position: absolute;
+	top:20px;
+	left: 200px;
+}
+
+#head-panel{
+	height: 50px;
+	width: auto;
+	background:lightblue;
+
+	position: relative;
+}
+
+#body-panel{
+	height: 300px;
+	width: auto;
+	background:lightgray;
+
+	position: relative;
+}
+
+#footer-panel{
+	height: 50px;
+	width: auto;
+	background:lightpink;
+
+	position: relative;
+}
+
+.cell{
+	display: table-cell;
+	background:lightgreen;
+	height: 30px;
+	width:13%;
+	vertical-align: center;
+	line-height: 30px;
+	/*outline: 1px solid red;*/
+	//用于表格属性, 表示表格的两边框合并为一条
+	border-collapse: collapse;
+	border:1px solid green;
+	/*padding: 0 20px;*/
+
+	font-family: '幼圆雅黑';
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.row{
+	display: table-row;
+	width:100%;
+}
+
+.table{
+	display: table;
+}
+
+#date-panel{
+	border-collapse: collapse;
+	border: 1px solid red;
+}
