@@ -22,9 +22,18 @@
 
 	mobile.init = function(){
 		console.log("++++++++mobile init+++++++++");
-		var hash = location.href;
+		var oldhref = location.href,newhref = oldhref +"?a=123&b=43ji&c=134j";
+		location.href = newhref;
+		console.log(location.href);
+		console.log(SearchParser());
+
 		console.log(hash);
 	};
+
+	//
+	mobile.forward = function(){
+
+	}
 
 	//针对IE，移动浏览器,得做兼容处理,IE9+,支持该事件
 	// document.addEventListener("DOMContentLoaded",function(){
@@ -77,12 +86,15 @@
 	 var SearchParser = function(){
 	 	var map = {};
 	 	var query = location.search.slice(1);
-	 	var parts = query.split("&");
-	 	parts.foreach(function(item){
-	 		// 这里的正则匹配不需要加属性：g
-	 		var part = item.match(/(.*)=(.*)/);
-	 		if()
-	 	});
+	 	if(query){
+		 	var parts = query.split("&");
+		 	parts.foreach(function(item){
+		 		// 这里的正则匹配不需要加属性：g
+		 		var part = item.match(/(.*)=(.*)/);
+		 		map[part[1]] = part[2];
+		 	});
+		 }
+	 	return map;
 	 }
 
 	 Array.prototype.foreach = function(callback){
