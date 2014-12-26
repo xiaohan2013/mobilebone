@@ -1,5 +1,6 @@
 (function(root,undefined){
 	var Calendar = {};
+
 	Calendar.VERSION = "1.0.0";
 
 
@@ -21,42 +22,70 @@
 
 		//时间
 		var Hour = currentDate.getHours(),
-			Minute = currrentDate.getMinutes(),
-			Second = currrentDate.getSeconds();
+			Minute = currentDate.getMinutes(),
+			Second = currentDate.getSeconds();
 
-
-
-		console.log(currMonth);
+		return {
+			second:Second,
+			minute:Minute,
+			hour:Hour,
+			week:currWeek,
+			day:currDay,
+			month:currMonth,
+			year:currYear
+		};
 	}
 
-	Calendar.timer = timer;
+	var getCurrentDate = function(){
 
+	};	
+
+	var getCurrentTime = function(){
+
+	};
+
+	var getStyle = function(elem,attr){
+		//样式对象
+		var oStyle = elem.currrentStyle ? elem.currrentStyle : window.getComputedStyle(this, null);
+
+		//获取属性值
+		if(oStyle.getPropertyValue){
+			return oStyle.getPropertyValue(attr);
+		}else{
+			return oStyle.getAttribute(attr);
+		}
+
+		//IE
+		if(elem.currentStyle){
+			return elem.currentSytle[attr];
+		}else if(elem.getComputedStyle){//W3C、Firefox返回的是一个CSS样式声明对象([object CSSStyleDeclaration])，只读
+			//返回的是最后的计算值，如果是相对值（em,百分数）.2em --->24px，将变成绝对值
+			return window.getComputedStyle(obj,null)[attr]; 
+		}else{
+			//内联样式
+			return elem.style.attr;
+		}
+	};
+
+	//字符串驼峰转换
+	String.prototype.toCamelCase = function(){
+		//中杠线隔开单词
+		var r = /[-|_](\w)/g;
+		return this.replace(r,function(m,n){
+			return m[1].toUpperCase();
+		});
+	};
+
+	var toCapitalizeCamelCase = function(str){
+
+	};
+
+	var toUnderScoreCase = function(str){
+
+	};
+
+	Calendar.timer = timer;
 
 	//将该对象挂载到window全局变量上
 	window.Calendar = window.C = Calendar;
 })(window);
-
-
-
-       <div class="portfolio-wrapper">
-
-          <div class="cover_image" style="height: 483px;">
-            <a href="#!/article/269">
-              <img alt="Nike Air Max 2015 飞越更远征程" src="http://cdn.aiispo.com.cn/image/article/cover_img/20141210/1418182429409909.jpg"> 
-              <div class="cover" style="height: 483px;"></div>
-            </a>
-          </div>
-          <div class="article_body">
-            <div class="article_meta">
-              <div class="title-container">
-                <a href="#!/article/269">  
-                  <span class="title"><!--ms-html--></span>  <!-- 注意这里这里这里，明显还没加载 -->
-                </a>
-              </div>
-
-              <div class="tags">
-                <!--ms-repeat--><a class="tag tag-0" href="#!/tag/运动玩家">运动玩家</a><a class="tag tag-1" href="#!/tag/时尚流行">时尚流行</a><a class="tag tag-2" href="#!/tag/鞋子">鞋子</a><a class="tag tag-3" href="#!/tag/Nike">Nike</a><a class="tag tag-4" href="#!/tag/系列">系列</a><!--ms-repeat-end-->
-              </div>
-            </div>
-          </div>
-        </div>

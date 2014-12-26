@@ -7,7 +7,9 @@
 	<link rel="stylesheet" type="text/css" href="calendar.css">
 	<script type="text/javascript" src="calendar.js"></script>
 	<script type="text/javascript">
-		Calendar.timer();
+		var time = C.timer();
+
+		console.log(time);
 	</script>
 </head>
 <body>
@@ -16,27 +18,15 @@
 
 		</div>
 		<div id="body-panel">
-<!-- 			<div class="table">
-			<div class="row">
-				<div class="cell">日</div>
-				<div class="cell">一</div>
-				<div class="cell">二</div>
-				<div class="cell">三</div>
-				<div class="cell">四</div>
-				<div class="cell">五</div>
-				<div class="cell">六</div>
-			</div>
-		</div>
-		 -->		
 			<table id="date-panel" cellpadding="0" cellspacing="0" border="1" width="400" >
-				<tr height="30" valign=center>
-					<td align=center >日</td>
-					<td align=center>一</td>
-					<td align=center>二</td>
-					<td align=center>三</td>
-					<td align=center>四</td>
-					<td align=center>五</td>
-					<td align=center>六</td>
+				<tr height="30" valign=center class="date-week-header">
+					<th align=center>一</th>
+					<th align=center>二</th>
+					<th align=center>三</th>
+					<th align=center>四</th>
+					<th align=center>五</th>
+					<th align=center>六</th>
+					<th align=center>日</th>
 				</tr>
 				<tr height="50">
 					<td align=center>1</td>
@@ -88,5 +78,52 @@
 		</div>
 		<div id="footer-panel"></div>
 	</div>
-</body>
+<!-- 	日历界面显示的布局
+<div class="calendar">
+	<div class="calendar-new">
+		<div class="select-box"></div>
+		<a href="javascript:;">返回今天</a>
+		<div class="table-box">
+			<table>
+				<tbody>
+					<tr>
+						<th>一</th>
+						<th>二</th>
+						<th>三</th>
+						<th>四</th>
+						<th>五</th>
+						<th>六</th>
+						<th>日</th>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						
+					</tr>
+					<tr></tr>
+					<tr></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="calendar-new-holidaytip"></div>
+</div>
+ --></body>
 </html>
+
